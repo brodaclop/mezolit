@@ -38,6 +38,14 @@
     margin: 0;
 }
 
+.version {
+    font-size: 6pt;
+    color: #333;
+    position: absolute;
+    bottom: 5pt;
+    right: 5pt;
+}
+
 
 
 div#frontcover {
