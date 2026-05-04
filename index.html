@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Peter Ellis" />
+    <meta name="subject" content="Mezolit TTRPG" />
+    <meta name="keywords" content="ttrpg, mesolithic" />
+    <meta name="date" content="2026-04-27" />
+    <link href="./styles.css" rel="stylesheet" />
+    <link href="./styles.css" media="print" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&amp;display=swap"
+        rel="stylesheet">
+
+    <script defer>
+
+        const addEntries = (root, tocParent, level, maxLevel) => {
+            const heading = `:scope > h${level}`;
+            const sections = [...root.querySelectorAll("section")].filter(elem => elem.querySelector(heading) && elem.id);
+            if (sections) {
+                const ul = document.createElement("ul");
+                sections.forEach(section => {
+                    const title = section.querySelector(heading);
+                    const li = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${section.id}`;
+                    link.innerText = title.innerText;
+                    li.appendChild(link);
+                    ul.appendChild(li);
+                    if (level < maxLevel) {
+                        addEntries(section, li, level + 1, maxLevel);
+                    }
+                });
+                tocParent.appendChild(ul);
+            }
+
+        }
+
+        window.generateToc = () => addEntries(document, document.querySelector(".toc"), 1, 2);
+
+
+    </script>
+
+
+</head>
+
+<body>
+    <div id="frontcover">
+        <div class="title">Mezolit</div>
+        <div class="subtitle">Songs from the Danube Bend</div>
+    </div>
+    <section id="intro">
+        <blockquote>
+            <p>
+                The will-o-wisp flittered and flickered over the scrawny bushes of the midnight marshland as if
+                searching
+                for something. Shadows fled from it, regrouping just outside the circle of light, further deepening the
+                gloom of the moonless night. For once the small group of figures crouched behind a nearby rock was glad
+                for
+                the
+                darkness. Sweaty hands gripped stone maces harder, hearts were pounding loud with the fear that their
+                own
+                sound was going to give their owners' hiding place away.
+            </p>
+            <p>
+                The shining ball suddenly stopped above what first looked like a log bobbing gently on the water. A gasp
+                from
+                behind the rock and then a barely audible whisper: &ldquo;Look, that's poor Hagon&hellip;&rdquo;
+                The ball lowered slowly, casting ever brighter light on what they could all see now was the body of a
+                drowned
+                man. The will-o-wisp hung still in the air for a moment, almost touching the back of its head, and
+                that's when the first spear whizzed through the air.
+            </p>
+            <p>
+                The rest happened very quickly: the ball of light slammed down and fused into
+                its
+                prey and what used to be the body of Hagon was now the body of something else altogether. With a groan
+                it
+                rose from the water, its bloated and shimmering frame silhouetted against the dark sky it turned its
+                head
+                towards the rock, from behind which a woman and a man leapt forward, stone maces raised above their
+                heads.
+                At the same time a man's voice broke into a chant, first quiet then growing louder and finally
+                splitting into two: a low, resonant melody from the throat and a thin, fluting voice from the same
+                mouth.</p>
+            <p>
+                The leather-clad woman got to the cadaver animated by ghostlight first, her
+                stone
+                mace striking down in an angry arc, missing just by inches as Hagon ducked to the side with surprising
+                agility for a drowned man, grabbing her right wrist as he did so. She let out a painful yelp, gasping
+                for
+                air as if she were given an unwanted share of the fate of the unfortunate Hagon. They tugged at each
+                other
+                momentarily, each trying to topple the other forward but neither succeeding. Nor did they see the second
+                stone mace burst into flames and catch the thing that possessed the late Hagon square in the jaw. Hagon
+                roared in pain, or at least someone roared with it for the voice was clearly not human and the words it
+                uttered were not human words. The Hagon-thing let go of the woman, trying to shield its face from the
+                fire
+                of the mace but to no avail: a second blow crashed through its raised arms and struck it in the chest.
+                It
+                toppled backwards with a loud splash and after that, silence.</p>
+            <p>
+                A third human stepped forward from the rock, even in furs he was visibly more
+                slender than his friends wearing thick leather trousers and shirts. He was unarmed unless we count the
+                little drum in his hand as a weapon, like the truly wise do.</p>
+            <p>
+                &ldquo;Are you okay, Lemea?&rdquo;, he asked the woman who was now bent
+                double in
+                a sputtering fit like someone who had just been pulled out of the water.</p>
+            <p>
+                &ldquo;Will&hellip;live&rdquo;, she replied between two wheezing
+                coughs.
+            </p>
+            <p>
+                &ldquo;The bastard almost took her down&rdquo;, the man with the stone mace
+                said.</p>
+            <p>
+                &ldquo;I was fearing that might happen, it's why I mixed in a song of
+                air
+                for her in your song of fire&rdquo;, replied the one with the drum.</p>
+            <p>&ldquo;Right, let's go. We need to get out of this horrible place and
+                bury
+                Hagon before daybreak&rdquo;, said Lemea, finally overcoming her urge to gulp air.</p>
+            <p>&ldquo;And we need to warn the others about ghostlight being around in these
+                bogs, you know how where there's one, there's many.&rdquo;</p>
+        </blockquote>
+    </section>
+    <section class="toc">
+        <h1>Table of Contents</h1>
+        <ul>
+            <li><a href="#world">World</a>
+                <ul>
+                    <li><a href="#world.material_culture">Material culture</a></li>
+                    <li><a href="#world.society">Society</a></li>
+                    <li><a href="#world.environment">Environment</a></li>
+                    <li><a href="#world.whispering-shadows">The Land of Whispering Shadows</a></li>
+                </ul>
+            </li>
+            <li><a href="#characters">Characters</a>
+                <ul>
+                    <li><a href="#characters.attributes">Attributes</a></li>
+                </ul>
+            </li>
+            <li><a href="#gameplay">Gameplay</a>
+                <ul>
+                    <li><a href="#gameplay.character_creation">Creating a character</a></li>
+                    <li><a href="#gameplay.dice">Dice</a></li>
+                    <li><a href="#gameplay.combat">Combat</a></li>
+                    <li><a href="#gameplay.healing">Healing</a></li>
+                    <li><a href="#gameplay.death">On the brink of death</a></li>
+                    <li><a href="#gameplay.items">Items</a></li>
+                    <li><a href="#gameplay.magic">Magic</a></li>
+                </ul>
+            </li>
+            <li><a href="#camp-backgronds">Camp backgrounds</a>
+                <ul>
+                    <li><a href="#camp-backgrounds.fishing">River fishing camp</a></li>
+                    <li><a href="#camp-backgrounds.hunter-gatherer">Forest hunter-gatherer camp</a></li>
+                    <li><a href="#camp-backgrounds.stone-quarry">Stone quarry camp</a></li>
+                    <li><a href="#camp-backgrounds.herd-follower">Herd follower camp</a></li>
+                </ul>
+            </li>
+            <li><a href="#tables">Tables</a>
+                <ul>
+                    <li><a href="#tables.item-list">Items</a></li>
+                    <li><a href="#tables.tattoo-list">Tattoos</a></li>
+                    <li><a href="#tables.song-list">Songs</a></li>
+                </ul>
+            </li>
+            <li><a href="#character-sheet">Character sheet</a>
+        </ul>
+    </section>
+    <section id="world">
+        <h1>World</h1>
+        <p>The game of <strong>Mezolit</strong> is set in a highly
+            fictionalised version of the Carpathian Basin, in Central Europe during the mesolithic age. This age is
+            often characterised by what its people didn't have yet: agriculture, metals and writing. </p>
+
+        <p>And while all of that may be true to a certain extent, the problem with such
+            statements is that they make us forget that they were humans pretty much exactly like us: striving to
+            survive not just as individuals but as a group and ultimately as a species, and find their places in the
+            world.</p>
+
+        <p>Most of all though, the world of <strong>Mezolit</strong> is not the same as the real-world mesolithic
+            Carpathian Basin. <em>It's got magic for a start.</em></p>
+
+        <p>All told, this world can't be anything but a fantasy, and like most fantasy
+            worlds, it is a projection of the author's ideas about their own environment onto the canvas of history,
+            joining the dots of solid evidence with lines of imagination.</p>
+
+        <p>
+            <string>In this setting the dots are few and the lines are many.</string>
+        </p>
+
+        <p>It is in this world where your adventures will be set, seeking out places, creatures,
+            and things that few do – hopefully returning with tales of the yet unknown.</p>
+        <section id="world.material_culture">
+            <h2 id="material_culture">Material culture</h2>
+
+            <p>After the end of the last ice age the area of the Carpathian Basin became a lot
+                warmer and more densely forested, reindeers migrated north and so did some of the people. Those that
+                stayed
+                behind have adapted to the new landscape and the new lifestyle it required: roaming herds of bison and
+                red
+                deer are tracked and hunted but also fiercely protected from depletion. Wood for fires and as
+                construction
+                material has become plentiful and the search for better materials and designs for tools is intensive.
+            </p>
+
+            <p>Grasslands provide fibres for rope braiding and net weaving, which together with boat
+                making have enabled relatively sedentary riverside fishing communities to form.</p>
+
+            <p>There's no large-scale agriculture but in places where there's less
+                pressure to be constantly on the move there's very deliberate management and selection of useful
+                plants, maybe even some crossbreeding attempts.</p>
+
+            <p>The main method of food preservation is air or smoke drying, which requires a lot of
+                skill, especially in areas where salt isn't available.</p>
+
+            <p>Metal smelting has not yet been invented but metals are known and used by a lucky
+                few. Meteoric iron, native copper, silver and death silver (a mercury-silver alloy) can all be found in
+                small quantities if one knows where to look. Techniques for working these materials are not well-known
+                but
+                are around, and people are always experimenting with new ways of turning them into decorative objects or
+                even tools.</p>
+        </section>
+        <section id="world.society">
+            <h2>Society</h2>
+            <section id="world.society.camps">
+                <h3>Camps</h3>
+                <p>Most people of <strong>Mezolit</strong> live in camps that
+                    practise a semi-nomadic hunting-herding lifestyle. A camp is
+                    thus not just a physical structure but a societal one: a group that moves together, linked to some
+                    degree by
+                    kinship. Of course there may be variations to this theme &ndash; some camps may be entirely nomadic
+                    while
+                    others may group around static resources: waters rich in fish, cave systems that provide ready-made
+                    shelter,
+                    a source of drinking water and easily quarriable rock.</p>
+
+                <p>The social structure of the camp can also vary, some will have long-term leaders,
+                    others will choose short-term leaders for different situations but the main focus is always on the
+                    survival
+                    of the group as a whole. For this reason resolving inter-group conflicts with deadly warfare is very
+                    rare,
+                    if other methods fail, non-lethal fighting (better known as a brawl), duels or other forms of
+                    competition
+                    are preferred as a last resort.</p>
+            </section>
+            <section id="world.society.knowledge">
+                <h3>Knowledge</h3>
+                <p>Knowledge is hugely important to the people of <strong>Mezolit</strong>, probably far more
+                    important than in later ages. After all, both your own and your camp's
+                    survival may depend on it. And with no way to write things down (apart from drawings and some
+                    notch-based
+                    counting) all that knowledge has to be memorised and continuously re-expressed as rhymes, songs and
+                    poems.</p>
+
+                <p>Curiosity, wanderlust and ingenuity are thus seen as valuable traits, albeit slightly dangerous
+                    when in excess. Sure, it's good to discover new places and things but failure can easily be fatal.
+                    This is why the people blessed (or cursed) with too much curiosity will often become
+                    adventurers, roaming the land in small bands, chasing monsters of the
+                    stories of old, in search for rare resources or just travelling around to see what's over the next
+                    big
+                    hill. They are also spreaders of culture, often spending time with other camps, exchanging
+                    knowledge,
+                    solving problems for them to gain their trust. And although most are happy to see them arrive,
+                    they're
+                    equally anxious to move them on should they stay too long.</p>
+
+                <p>The collective knowledge of a camp can vary wildly but it could include observations
+                    about the position and movement of stars, weather patterns, the behaviour of animals and plants, and
+                    where
+                    to find useful resources, like flint or other types of rock.</p>
+            </section>
+            <section id="world.society.rituals_and_art">
+                <h3>Rituals and Art</h3>
+                <p>Rituals, while their details can be highly abstract and artistic, are very closely
+                    tied to the rhythm of everyday life. Art is thus treated not so much as the expression of the self
+                    but
+                    as a
+                    way to control the world around you. And as songs or drawings can fill the world with real, tangible
+                    magic,
+                    this view is not unjustified.</p>
+
+                <p>Each camp may have their own particular twist on every ritual but the occasions
+                    calling for them are fairly universal: birth, reaching adulthood, death, the changing of the
+                    seasons,
+                    going
+                    on a journey, the completion of a journey, welcoming visitors, etc.</p>
+            </section>
+        </section>
+        <section id="world.environment">
+            <h2>Environment</h2>
+            <section id="world.environment.climate">
+                <h3>Climate</h3>
+                <p>As has been mentioned above, the climate is continental with four seasons: warm/hot
+                    summers and freezing winters being separated by the changeable weather of spring and autumn seasons.
+                    Upland
+                    areas are densely forested while lower down we find rich grasslands and often marshes, especially in
+                    the
+                    vicinity of wide, meandering rivers. This allows for a variety of lifestyles but winter survival is
+                    often
+                    the hardest test for any community.</p>
+            </section>
+            <section id="world.environment.fauna">
+                <h3>Fauna</h3>
+                <p>The megafauna that dominated during the ice age are in retreat, woolly mammoths no
+                    longer roam these lands (they still roam elsewhere just not here) but cave lions do, with the
+                    occasional
+                    leopard and hyena hanging on.</p>
+
+                <p>Auroch, wild horses and deer are common, as are bears and wolves with whom people are
+                    competing for prey and habitat.</p>
+
+                <p>Neanderthals are no longer around but their legacy can be found both in some lineages of people,
+                    and in the objects they left behind. These (and other strange artefacts adventurers sometimes bump
+                    into)
+                    hint at a deep past that captures the imagination of many an inhabitant of
+                    <strong>Mezolit</strong>.
+                </p>
+            </section>
+            <section id="world.environment.time">
+                <h3>Time</h3>
+                <p>Keen observers of nature, the people of <strong>Mezolit</strong> are well aware of its cycles:
+                    days, the phases of the moon, seasons and years are commonly used
+                    as points of reference when talking about time. Other references to time also exist, relating to the
+                    lifecycles of animals, plants and fungi, but these may not be as universally recognised.</p>
+            </section>
+        </section>
+        <section id="world.whispering-shadows">
+            <h2>The Land of Whispering Shadows</h2>
+            <p>The Land of Whispering Shadows is the ever-shifting domain between life and death
+                that everyone has to pass through at the end of their lives. But not every journey to it is one way.
+                It is still possible to turn around and go back to life from here but it isn't easy and should you
+                succeed, you may find the life you return to isn't exactly like the one you had left. Some even seek out
+                this shadowy realm on purpose because of this &ndash; a dangerous practice that nevertheless has the
+                potential to greatly enhance one's powers.</p>
+
+            <p>The most likely way for characters to find themselves in this strange in-between
+                realm is through too many injuries sustained during their adventures. Should they wish to continue
+                to live, they must find a way to resist the persistent pull of death towards the end of their path, turn
+                around and fight whatever they have to face on the way back.</p>
+
+            <!-- <p>Their shape and characteristics in this world is determined by their personality, their
+                <a href="#characters.attributes.cunning">Cunning</a> attribute will temporarily replace their <a
+                    href="#characters.attributes.hunting">Hunting</a>
+                attribute, their <a href="#characters.attributes.song">Song</a> attribute becomes
+                their <a href="#characters.attributes.making">Making</a> attribute and their <a
+                    href="#characters.attributes.life">Life</a>
+                (which is now 0) is replaced by their <a href="#characters.attributes.anima">Anima</a>.
+            </p> -->
+        </section>
+    </section>
+
+
+
+    <section id="characters">
+        <h1>Characters</h1>
+        <p>Characters in <strong>Mezolit</strong> can be described by four things:
+            <strong>who they are</strong>, <strong>what they can do</strong>, <strong>what they know</strong> and
+            <strong>what they
+                own</strong>.
+        </p>
+
+        <p>Of those, <strong>who they are</strong> is the simplest in
+            terms of gameplay. Player characters can be as varied as any people, they only share one crucial
+            characteristic: their inability to live without adventure. This makes others look at them with a mixture of
+            slight suspicion and awe: their presence often spells danger but it is also accepted that knowledge, stories
+            and artefacts they bring home from their travels may one day make the difference between survival and
+            extinction. Adventurers who travel together are often from the same camp but there's no hard rule
+            about this. Beyond the basics players can choose their characters to be whoever they want to be.</p>
+
+        <p><strong>What they can do</strong> is represented by <a href="#character.attributes">Attributes</a>, of which
+            there are six. The starting values for them are determined at the start of the game and will change over the
+            course of their adventure. They usually grow with experience and use but may go down temporarily as a result
+            of wounds or other hindrances.</p>
+
+        <p><strong>What they know</strong> is represented by the list of songs they
+            can sing, tattoos they can draw and objects they can make. Songs are
+            knowledge in its purest form: knowledge of the past, faraway lands,
+            predicting the weather or the movement of the stars, and of ways to bend the world to one's will.
+            Tattoos are a form of enchantment that can be placed on an object or living
+            being. And objects are, well, objects: tools, weapons,
+            musical instruments, anything. Each player character will start with a selection of these from the knowledge
+            their group has at the start of the character's adventures. Later on they will learn new things and
+            with experimentation maybe even invent new objects, songs or tattoos of their own.</p>
+
+        <p><strong>What they own</strong> is the list of items they carry and the tattoos
+            or drawings on their body. It's worth noting that while the abstract concept of &ldquo;property&rdquo;
+            may not exist in this world, personal ownership of items and thus the idea of &ldquo;theft&rdquo; are
+            widely recognised.</p>
+
+        <section id="characters.attributes">
+            <h2>Attributes</h2>
+            <p>A character's attributes represent the extent and limits of their capabilities.
+                It is these attributes that are tested every time a player has to roll to see whether the action they
+                planned for their character succeeds or fails.</p>
+
+            <p>Each one has a maximum and a current value between 1 and 10. Some effects (most
+                notably wounds sustained in combat) may reduce the current value of an attribute, this can be restored
+                with
+                resting, healing or magic, but never beyond the maximum value. During the character's adventures the
+                maximum value of an attribute may rise but never beyond 10.</p>
+
+            <p>Attributes have a primary purpose and any number of secondary purposes. The only
+                difference between them is that the primary purpose is covered in the rules that follow while for
+                secondary
+                purposes the GM has to judge which attribute applies for a given situation and how the roll should be
+                made.</p>
+
+            <sections id="characters.attributes.hunting">
+                <h3>Hunting</h3>
+                <p>The primary purpose of this attribute is combat, both in attacking and defending. Its
+                    secondary uses include tracking prey, feats of strength or agility, or reading the signs of a fight
+                    that had
+                    taken place in the past.</p>
+            </sections>
+            <sections id="characters.attributes.making">
+                <h3>Making</h3>
+                <p>The primary purpose of this attribute is making objects, be they tools, clothes,
+                    weapons, tattoos or talismans. Secondary uses include challenges requiring manual dexterity and
+                    patience.</p>
+            </sections>
+            <sections id="characters.attributes.life">
+                <h3>Life</h3>
+                <p>This attribute shows how well a character can tolerate wounds, diseases and poisons. These can
+                    decrease it and if it reaches 0, the character loses consciousness and enters The
+                    Land of Whispering Shadows. Its secondary uses include dealing with exhaustion and
+                    other feats of endurance.</p>
+            </sections>
+            <sections id="characters.attributes.cunning">
+                <h3>Cunning</h3>
+                <p>This attribute shows how well a character can deceive others or detect if
+                    they're being deceived. This can be verbal deception (i.e. lying), skulking in shadows, camouflaging
+                    people or objects, distract opponents, etc. Its secondary uses include challenges that require
+                    quick,
+                    creative thinking.</p>
+            </sections>
+            <sections id="characters.attributes.song">
+                <h3>Song</h3>
+                <p>This attribute shows the power of a character's songs. Songs are key to culture,
+                    civilisation and ultimately, group survival. In the world of
+                    <strong>Mezolit</strong> magic is alive and songs are the main conduits for it. But
+                    in the absence of a writing system, as a secondary use, songs are also the vehicle for remembering
+                    and
+                    passing on knowledge of the natural world, history and even technology.
+                </p>
+            </sections>
+            <sections id="characters.attributes.anima">
+                <h3>Anima</h3>
+                <p>This attribute shows the character's spiritual force. It shows how well they
+                    can resist magic and their ability to imbue items with magical power. Its secondary uses include
+                    challenges
+                    that require willpower, interacting with the spirits of the world, or displays of dominance.</p>
+            </sections>
+        </section>
+    </section>
+    <section id="gameplay">
+        <h1>Gameplay</h1>
+        <p>The game is ideally played by 4-6 people, one of whom is the <strong>storyteller</strong> and the others the
+            <strong>players</strong>. The storyteller's role is to bring the world of <strong>Mezolit</strong> to life,
+            populate it with ordinary and wondrous creatures, places and events, while each of the players assume the
+            role of a character in the story, driving it in various directions.
+        </p>
+        <section id="gameplay.character_creation">
+            <h2>Creating a character</h2>
+            <p>
+                Creating a character is a relatively simple process in this game.
+            </p>
+            <p>
+                First of all the player and the storyteller together will decide what kind of <a
+                    href="#camp-backgrounds">camp background</a> the character has. This determines the character's
+                starting knowledge and equipment, although if the storyteller allows for it, this can be diverged from.
+            </p>
+            <p>
+                Then the player names the character and decides their character's age, looks and personality. Of
+                course all of these can change later during the game, usually as a result of the passage of time and
+                their experiences.
+            </p>
+            <p>Finally the player needs to distribute 18 points between their character's 6 <a
+                    href="characters.attributes">Attributes</a>, with each attribute needing at least 1 and at most 5
+                points. <em>(Note: attributes can of course rise beyond 5 later on, this is just a starting
+                    restriction)</em>. They will then add the modifiers coming from their chosen <a
+                    href="#camp-backgrounds">camp background</a> to these attributes, so in total their attributes
+                should add up to 22 points.</p>
+        </section>
+        <section id="gameplay.dice">
+            <h2>Dice</h2>
+            <p>
+                When the players want their character to attempt an action whose outcome is <em>uncertain</em>, the
+                storyteller can ask them to roll the dice.
+                The exact details of the roll are always up to the storyteller but the basic mechanics of every roll is
+                always the same.
+            </p>
+            <section id="gameplay.dice.rolling">
+                <h3>Rolling</h3>
+                <p>In the game of <strong>Mezolit</strong> there is only one kind of dice
+                    roll: roll a number of 6-sided dice, treat every roll of <strong>1-4</strong> as no success, a
+                    <strong>5</strong> as one success and a <strong>6</strong> as
+                    two successes, then add up all the successes obtained from the dice. This can be written as
+                    <strong>&lt;x&gt;D</strong> where <strong>&lt;x&gt;</strong> is the
+                    number of dice rolled.
+                </p>
+
+                <p>So for example <strong>4D</strong> means: roll with 4 dice and
+                    count all 5s rolled as 1 success, and each 6 rolled as 2 successes.</p>
+
+                <p>The number of dice rolled usually equals the attribute that is being used for the action (i.e.
+                    <a href="#characters.attributes.hunting">Hunting</a> for attacking with a weapon, <a
+                        href="#characters.attributes.cunning">Cunning</a> for trying
+                    to distract an enemy, <a href="#characters.attributes.song">Song</a> for trying to recall knowledge,
+                    etc.) Tools,
+                    amulets, magic
+                    effects or others helping with the action can also add (or occasionally subtract) dice.
+                </p>
+            </section>
+            <section id="gameplay.dice.success">
+                <h3>Determining success or failure</h3>
+                <p>In an uncontested roll the total number of successes
+                    directly determines the outcome of an action: for simple/easy tasks 1 success is enough, for more
+                    complicated tasks 2 successes are required, harder tasks still can require 3 or even more successes
+                    to
+                    perform. If the total number of successes surpasses this threshold by 2 or more, the action can be
+                    deemed as
+                    a resounding success. What this means in practice depends on the action
+                    itself and is determined by the storyteller. Similarly if the total successes rolled are 2 or more
+                    under the
+                    threshold, it counts as a resounding failure. Again the
+                    exact details of this are determined by the storyteller but as a general rule it should not lead to
+                    the
+                    death of the character, rather it should be something that moves the story on in an unexpected or
+                    unplanned
+                    direction.</p>
+
+                <p>Contested dice rolls work in a very similar way with the
+                    exception that the threshold is determined by the total successes rolled by the opponent. In case of
+                    a tie
+                    in a contested dice roll the situation remains unchanged.</p>
+            </section>
+            <section id="gameplay.dice.helping">
+
+                <h3>Helping</h3>
+                <p>Helping others is fundamental in this game: one person standing against a cave bear
+                    has no chance but four of them acting as a unit do, even if only one of them is fighting it
+                    directly.
+                    Similarly, multiple people chanting the same magical song as a choir will have a stronger effect
+                    than just
+                    someone doing it on their own.</p>
+
+                <p>For direct help the helper must first
+                    choose how they want to help the helpee, for example someone may try to distract the cave bear while
+                    the
+                    other one attacks. Then they should roll according to the nature of the action (i.e. cunning for
+                    distraction
+                    or camouflage, fighting for trying to raise a shield for someone else being attacked) and the number
+                    of
+                    total successes they roll is then added to the number of dice the helpee can roll.</p>
+
+                <blockquote>
+                    <p>For example let's look at this scenario: <strong>Player A</strong>
+                        tries to distract a bear who's attacking <strong>Player B</strong>. <strong>Player A</strong>
+                        has a <a href="#characters.attributes.cunning">Cunning</a> score of 4, so they
+                        roll <strong>4D</strong>. The result is 3,6,1 and 4, which means they rolled 2 successes. When
+                        the
+                        bear attacks <strong>Player B</strong>, they can thus use 2 extra dice in their <a
+                            href="#characters.attributes.hunting">Hunting</a> roll to defend themselves.
+                    </p>
+                </blockquote>
+
+                <p>It is also possible to offer indirect help by performing a
+                    separate action (for example singing a magical song or knocking an opponent over), in these
+                    cases the number of helping dice is determined by the song strength or the number
+                    of extra successes in a contested or uncontested roll.</p>
+            </section>
+        </section>
+
+        <section id="gameplay.combat">
+            <h2>Combat</h2>
+            <p>In a dangerous world sometimes the characters will find themselves fighting for their
+                lives. These are the rules for those occasions.</p>
+
+            <section id="gameplay.combat.timing">
+                <h3 id="h.xvo8k539moet">Timing and actions</h3>
+                <p>Unlike in most games, combat is not divided into rounds. Instead at the start of an
+                    encounter the players can discuss what their characters are planning to do and can freely coordinate
+                    their
+                    actions afterwards too. Their characters can talk to each other and use this to their advantage. (Of
+                    course
+                    if they want to stay silent for an ambush, this avenue is closed to them but they can still probably
+                    use
+                    hand signals or non-verbal sounds to cue each other's pre-agreed actions.)</p>
+
+            </section>
+            <section id="gameplay.combat.attacking">
+                <h3>Attacking</h3>
+                <p>When a character is attacking, they start by rolling a <a
+                        href="#characters.attributes.hunting">Hunting</a>
+                    roll, modified by their weapon of choice plus any magic or help that is applicable. The number of
+                    successes they roll is their attacking total.</p>
+
+            </section>
+            <section id="gameplay.combat.defending">
+                <h3>Defending</h3>
+                <p>Next the target of the attack rolls a <a href="#characters.attributes.hunting">Hunting</a> roll,
+                    their number of successes is the defending total. If the defending
+                    total reaches or exceeds the attacking
+                    total, they've managed to avoid or parry the attack.</p>
+
+            </section>
+            <section id="gameplay.combat.wounding">
+                <h3>Wounding</h3>
+                <p>If the attacking total is higher, we subtract the defending total
+                    from it, this gives the wounding total.</p>
+
+                <p>Finally the target has to roll a <a href="#characters.attributes.life">Life</a> roll to see how much
+                    they can resist the damage done by the attack. Any successes they roll here are subtracted from the
+                    wounding total, and if the remaining wounding is still greater than zero,
+                    that number is subtracted from the target's <a href="#characters.attributes.life">Life</a>. (Note:
+                    this also means that next time they're wounded, they'll have less chance to
+                    resist damage.)</p>
+            </section>
+        </section>
+        <section id="gameplay.healing">
+            <h2>Healing</h2>
+            <p>Wounds sustained in the game will heal slowly and naturally with time but it's a lot
+                faster if wounds are properly tended to. In terms of game mechanics this means that once a day the
+                wounded
+                character can make a recovery roll: this is a <a href="#characters.attributes.life">Life</a> roll
+                and the character can recover as many <a href="#characters.attributes.life">Life</a>
+                points lost as the successes they rolled. (Note: obviously the roll always
+                has to be made with the current and not maximum <a href="#characters.attributes.life">Life</a>.
+                Serious injuries are extra hard to recover from.)</p>
+
+            <p>Tending the wounds adds extra dice to this roll. The three main ways of helping are
+                various wound dressings, tattoos and healing songs, but other creative methods can also add the odd
+                extra
+                die. (For example constructing a stretcher that allows the wounded person to rest while the party is
+                on the
+                move.)</p>
+        </section>
+        <section id="gameplay.death">
+            <h2>On the brink of death</h2>
+            <p>Whenever a character's <a href="#character.attributes.life">Life</a> reaches 0, they enter the <a
+                    href="#world.whispering-shadows">Land of Whispering Shadows</a>, a weird liminal world between life
+                and whatever comes after it.
+            </p>
+
+            <p>With their material body left behind, their shape and characteristics in this world are determined by
+                their personality: their
+                <a href="#characters.attributes.cunning">Cunning</a> attribute will temporarily replace their <a
+                    href="#characters.attributes.hunting">Hunting</a>
+                attribute, their <a href="#characters.attributes.song">Song</a> attribute becomes
+                their <a href="#characters.attributes.making">Making</a> attribute and their <a
+                    href="#characters.attributes.life">Life</a>
+                (which is now 0) is replaced by their <a href="#characters.attributes.anima">Anima</a>.
+            </p>
+
+            <p>
+                The world surrounding them closely resembles that which they've left behind but the lights will have
+                changed and space itself warps in ways that are difficult to figure out. Distances are not what they
+                seem and what appears like a straight line might feel like climbing a mountain.
+            </p>
+            <p>
+                This makes finding their way back to their body quite challenging. The exact options available is up to
+                the
+                storyteller, they could cajole a passing spirit into acting as a guide, figure out the exact geometry of
+                their surroundings or just make a beeline towards their body by sheer force of will, but from the
+                perspective of the game's rules avoiding death requires a <a
+                    href="#characters.attributes.cunning">Cunning</a>, <a href="#characters.attributes.song">Song</a> or
+                <a href="#characters.attributes.anima">Anima</a> roll, modified by items or tattoos they might be
+                wearing, or the <a href="#tables.song-list.song-of-calling">Song of Calling</a> being sung.
+            </p>
+
+            <p>The difficulty of this roll is 1 at the first attempt and increases by 1 on every subsequent attempt,
+                regardless of whether the previous attempt has succeeded or failed. Thus a character finding themselves
+                in this shadowy realm too often will eventually find it impossible to return.</p>
+        </section>
+
+        <section id="gameplay.items">
+            <h2>Items</h2>
+            <p>In this game all items are temporary and things like weapons, advanced tools or magic items can
+                wear out by use. (Basic tools and clothes do too but repairing or replacing them is
+                implied to happen throughout a normal day so in terms of game mechanics they count as permanent.)
+            </p>
+
+            <p>Items' basic function is to give extra dice to certain rolls, a weapon will add to
+                <a href="#characters.attributes.hunting">Hunting</a> rolls, a suitably prepared wolf pelt will add to
+                <a href="#characters.attributes.cunning">Cunning</a> rolls for camouflage and so on.
+            </p>
+
+            <p>Such items have two characteristics: item strength
+                determines how many dice can be added to rolls, and item
+                charge determines how many times an item can be used before they wear out or break.
+            </p>
+
+            <section id="gameplay.items.making">
+                <h3>Making items</h3>
+                <section id="gameplay.items.making.mundane">
+                    <h4>Mundane items</h4>
+                    <p>Making mundane items requires the character to have the knowledge of making that item. They also
+                        need to have the right tools and materials, and once they have all this, they can roll a
+                        <a href="#characters.attributes.making">Making</a> roll. The difficulty of the roll depends on
+                        the item:
+                        knapping a flint arrowhead is an easy task, making an unfired clay pot is one category harder,
+                        and
+                        making a
+                        glazed pot that is fired too is a hard task.
+                    </p>
+
+                    <p>If the character is familiar with the item they try to make but not with how to make
+                        it, the roll is one category harder than it normally would be.</p>
+
+                    <p>On a resounding success the item either becomes
+                        unusually strong and durable (extra item strength &amp; charges) or acquires new and unexpected
+                        properties.
+                        For example a woven basket may become an effective defensive weapon this way. This is in fact
+                        the
+                        most
+                        common way of inventing new items.</p>
+
+                </section>
+                <section id="gameplay.items.making.magic">
+                    <h4>Magic items</h4>
+                    <p>Making magic items is a much more involved process, requiring three steps. The steps
+                        can be performed by different characters and they are:</p>
+                    <ol start="1">
+                        <li>First the item itself needs to be crafted, this determines the amount of
+                            magic the item can hold. The crafter has to roll a <a
+                                href="#characters.attributes.making">Making</a> roll, and the
+                            number of successes will be the maximum item strength and charge the
+                            item can accommodate.</li>
+                        <li>In the second step a song needs to be sung, determining the magical effect
+                            and the successes rolled on a <a href="#characters.attributes.song">Song</a> roll will
+                            determine
+                            the strength of the effect. If this would exceed the item's maximum strength, the item
+                            strength
+                            will be equal to its maximum strength instead.</li>
+                        <li>Lastly the number of successes on an <a href="#characters.attributes.anima">Anima</a>
+                            roll determines the charges of the item. Similarly to the second step, should this
+                            be higher than the maximum item charge, it will be set to that instead.</li>
+                    </ol>
+
+                </section>
+                <section id="gameplay.items.making.tattoos">
+                    <h4>Tattoos</h4>
+                    <p>Tattoos resemble magic items but they work in a very different way. (Some of them can be
+                        painted on objects or carved into trees but for the sake of simplicity
+                        we'll call them tattoos too as they work in exactly the same way.)</p>
+
+                    <p>To create a tattoo, the tattooist has to make a successful <a
+                            href="#characters.attributes.making">Making</a> roll
+                        against the tattoo's making difficulty. If the tattoo is put
+                        on a living being, it belongs to that being from then on. If it's on a non-living object, it
+                        belongs to its maker. All told, a person can have as many tattoos belonging to them as their
+                        <a href="#characters.attributes.anima">Anima</a> attribute.
+                    </p>
+
+                    <p>The strength and the number of charges of a tattoo is fixed, although it is possible to develop
+                        improved versions of a drawing (by rolling a resounding success when making them
+                        for example). Some tattoos provide a constant effect and thus have no charges
+                        but even those that have to be activated recharge by next sunrise. This makes them very powerful
+                        compared to
+                        other items but really powerful tattoos are hard to come by and make.</p>
+                </section>
+            </section>
+            <section id="gameplay.items.repairing">
+                <h3>Repairing items</h3>
+                <p>While all items deteriorate with use, as a general rule characters try to keep them in good shape.
+                    This means that in the absence of time pressure or other extreme circumstances repairable items are
+                    kept at maximum charge as part of normal resting activities.</p>
+                <p>Even under time pressure, mundane items can simply be repaired by a <a
+                        href="#characters.attributes.making">Making</a> roll.
+                    Given the right tools and materials repairing an item counts as an easy task, which means that
+                    1 success will restore an item charge, while 3 successes will restore all of the item's charges.</p>
+
+                <p>Restoring charges of a magic item works in a similar way except the roll required is
+                    <a href="#characters.attributes.anima">Anima</a>.
+                </p>
+
+                <p>Tattoos cannot be restored. (They can of course still be redrawn by following the
+                    process of creating a new tattoo.)</p>
+
+            </section>
+
+        </section>
+        <section id="gameplay.magic">
+            <h2>Magic</h2>
+            <p>For the people of <strong>Mezolit</strong>, magic is part of everyday life
+                in a way our modern brains find difficult to comprehend. While we tend to think in neatly delineated
+                spells,
+                the magic of <strong>Mezolit</strong> is in the songs and rhythms of nature.
+                Singing a song about the past is magic: it creates a very real connection to people who are dead.
+                Knowing
+                the migration patterns of animals is magic too, and so is seeing the figure of a small sculpture
+                you're about to carve out of a deer antler.</p>
+
+            <p>Of course in terms of game mechanics the magic we're going to talk about is
+                only that which tries to directly affect the flow of the world, but it's important to remember that
+                this distinction is ours, not theirs.</p>
+
+            <p>In any case, a magical song is just like any other song and to sing it you need to roll an
+                uncontested <a href="#characters.attributes.song">Song</a> roll against the difficulty of the song. The
+                song's strength is the number of successes above the threshold.
+                If the song affects unwilling targets, they can contest this by rolling <a
+                    href="#characters.attributes.anima">Anima</a>
+                to see if they can reduce the song's strength. If the strength goes below zero,
+                the song will not affect them (but it may still affect other targets).</p>
+
+            <p>The effect of the song lasts while you're singing the song. (Of course it may
+                have longer lasting aftereffects, i.e. a flammable object lit on fire with song will keep on
+                burning.)</p>
+
+            <p>Normally you can only sing one song at the time but you can attempt to weave multiple
+                songs together. In these cases you need to add their difficulties together and roll against that
+                target.</p>
+
+
+        </section>
+    </section>
+    <section id="camp-backgronds">
+        <h1>Camp backgrounds</h1>
+
+        <section id="camp-backgrounds.fishing">
+            <h2>River fishing camp</h2>
+            <p>These camps are probably the closest to being fully settled, staying in one place for
+                several years, until some local resource (wood, reeds, etc.) gets close to depletion, then move to a
+                different stretch of the river.</p>
+
+            <p>Their diet is probably the most varied and healthy of all the people, at least until the rivers freeze
+                over in the winter.</p>
+
+            <p>The main activities beyond fishing are rope and netmaking and boat building. The two
+                main types of boat are the log canoe style (a long and slender boat made via hollowing out a tree
+                log) and the coracle style (animal skin stretched over a wooden framework)</p>
+
+            <p>Their clothing is a mixture of woven plant fibres and fish skin, while they preserve
+                food mainly by sun or wind drying.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attributes</th>
+                        <th>Items</th>
+                        <th>Songs</th>
+                        <th>Tattoos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><a href="#characters.attributes.making">Making</a>: +1</li>
+                                <li><a href="#characters.attributes.life">Life</a>: +2</li>
+                                <li><a href="#characters.attributes.cunning">Cunning</a>: +1</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.item-list.rope">Rope</a></li>
+                                <li><a href="#tables.item-list.stone-hand-axe">Stone hand axe</a></li>
+                                <li><a href="#tables.item-list.wooden-spear">Wooden spear</a></li>
+                                <li><a href="#tables.item-list.flint-and-firestone">Flint and firestone</a></li>
+                                <li><a href="#tables.item-list.net">Net</a></li>
+                                <li><a href="#tables.item-list.woven-basket">Woven basket</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.song-list.song-of-air">Song of Air</a></li>
+                                <li><a href="#tables.song-list.song-of-stunning">Song of Stunning</a></li>
+                                <li><a href="#tables.song-list.song-of-the-ghost-light">Song of the Ghost Light</a>
+                                </li>
+                                <li><a href="#tables.song-list.song-of-the-waves">Song of the Waves</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.tattoo-list.the-slippery-eel">The Slippery Eel</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="camp-backgrounds.hunter-gatherer">
+            <h2>Forest hunter-gatherer camp</h2>
+            <p>These camps rely on the wide variety of resources offered by the deciduous forests
+                that took over mountainous and hilly regions after the withdrawal of the ice sheets. Typically they
+                spend
+                summers in forest shelters, collecting supplies for the winter, when they withdraw into caves to
+                survive the
+                snow and the cold.</p>
+
+            <p>They're roamers of forests, know all the plants and mushrooms that grow there
+                and excellent at finding their way. They're also opportunistic hunters of big game, which is their
+                main source of clothing material and provides huge amounts of meat that are smoked for preservation.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attributes</th>
+                        <th>Items</th>
+                        <th>Songs</th>
+                        <th>Tattoos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><a href="#characters.attributes.hunting">Hunting</a>: +1</li>
+                                <li><a href="#characters.attributes.song">Song</a>: +1</li>
+                                <li><a href="#characters.attributes.anima">Anima</a>: +2</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.item-list.antler-staff">Antler staff</a></li>
+                                <li><a href="#tables.item-list.stone-axe">Stone axe</a></li>
+                                <li><a href="#tables.item-list.wooden-spear">Wooden spear</a></li>
+                                <li><a href="#tables.item-list.flint-and-firestone">Flint and firestone</a></li>
+                                <li><a href="#tables.item-list.tinder-fungus">Tinder fungus</a></li>
+                                <li><a href="#tables.item-list.bone-flute">Bone flute</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.song-list.song-of-the-north-star">Song of the North Star</a>
+                                </li>
+                                <li><a href="#tables.song-list.song-of-the-ghost-light">Song of the Ghost Light</a>
+                                </li>
+                                <li><a href="#tables.song-list.song-of-the-wolf">Song of the Wolf</a></li>
+                                <li><a href="#tables.song-list.song-of-the-bear">Song of the Bear</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.tattoo-list.the-balancing-stag">The Balancing Stag</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="camp-backgrounds.stone-quarry">
+            <h2>Stone quarry camp</h2>
+
+            <p>These camps move around a lot throughout the year but they always return to a solid
+                source of stone for a season. Their expertise with recognising, quarrying and working different
+                types of
+                stone is unsurpassed, but it also means they're more reliant on trade with other camps for their
+                food
+                or clothing, which therefore often resembles that of the groups around them.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attributes</th>
+                        <th>Items</th>
+                        <th>Songs</th>
+                        <th>Tattoos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><a href="#characters.attributes.making">Making</a>: +2</li>
+                                <li><a href="#characters.attributes.cunning">Cunning</a>: +1</li>
+                                <li><a href="#characters.attributes.song">Song</a>: +1</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.item-list.antler-hammer">Antler hammer</a></li>
+                                <li><a href="#tables.item-list.stone-axe">Stone axe</a></li>
+                                <li><a href="#tables.item-list.stone-tipped-spear">Stone-tipped spear</a></li>
+                                <li><a href="#tables.item-list.obsidian-scraper">Obsidian scraper</a></li>
+                                <li><a href="#tables.item-list.sling">Sling</a></li>
+                                <li><a href="#tables.item-list.shaped-slingstone">Shaped slingstone</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.song-list.song-of-the-bat">Song of the Bat</a></li>
+                                <li><a href="#tables.song-list.song-of-fire">Song of Fire</a></li>
+                                <li><a href="#tables.song-list.song-of-the-ghost-light">Song of the Ghost Light</a>
+                                </li>
+                                <li><a href="#tables.song-list.song-of-the-stone">Song of the Stone</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.tattoo-list.the-crafty-crow">The Crafty Crow</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="camp-backgrounds.herd-follower">
+            <h2>Herd follower camp</h2>
+            <p>These camps are always on the move, accompanying herds of auroch or other herbivores across the Great
+                Plains. They hunt the animals as a group but at the same time they are also careful to not harm the
+                herd's health as a whole, being acutely aware that their entire existence relies on it.</p>
+
+            <p>They are the undisputed champions of leatherworking and makers of many bone tools and intricately carved
+                objects of art. Since they're always on the move, they trade a lot with the camps they pass by.</p>
+
+            <p>On their journeys they also forage but only from easy sources: mushrooms and berries are easy to
+                pick on the move, digging up roots is not.</p>
+
+            <p>Their clothing is almost completely animal-based: leather prepared in various ways, bone buckles and
+                leather lacing are what you'll find them wearing the most.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attributes</th>
+                        <th>Items</th>
+                        <th>Songs</th>
+                        <th>Tattoos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><a href="#characters.attributes.hunting">Hunting</a>: +2</li>
+                                <li><a href="#characters.attributes.making">Making</a>: +1</li>
+                                <li><a href="#characters.attributes.life">Life</a>: +1</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.item-list.bone-flute">Bone flute</a></li>
+                                <li><a href="#tables.item-list.stone-tipped-spear">Stone-tipped spear</a></li>
+                                <li><a href="#tables.item-list.woven-basket">Woven basket</a></li>
+                                <li><a href="#tables.item-list.tinder-fungus">Tinder fungus</a></li>
+                                <li><a href="#tables.item-list.stone-hand-axe">Stone hand axe</a></li>
+                                <li><a href="#tables.item-list.leather-tent">Leather tent</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.song-list.song-of-the-north-star">Song of the North Star</a></li>
+                                <li><a href="#tables.song-list.song-of-stunning">Song of Stunning</a></li>
+                                <li><a href="#tables.song-list.song-of-the-plains-wind">Song of the Plains Wind</a></li>
+                                <li><a href="#tables.song-list.song-of-the-buzzard">Song of the Buzzard</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.tattoo-list.the-bull-auroch">The Bull Auroch</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </section>
+    <section id="tables">
+        <h1>Tables</h1>
+        <section id="tables.item-list">
+            <h2 style="display: none;">Items</h2>
+            <table class="item-table">
+                <caption>
+                    Items
+                </caption>
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Making difficulty
+                        </th>
+                        <th>
+                            Item strength
+                        </th>
+                        <th>
+                            Item charges
+                        </th>
+                        <th colspan="2">
+                            Description
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th id="tables.item-list.leather-tent">
+                            Leather tent
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td colspan="2">
+                            Wooden poles and leather flaps that can be quickly assembled into a tent by a group of 2-3
+                            people. The tent provides shelter from the elements for 4-6 people, making it easier to
+                            recover from wounds, make and repair items in bad weather.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="tables.item-list.antler-hammer">
+                            Antler hammer
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            20
+                        </td>
+                        <td colspan="2">
+                            An antler that can be used for mining, flint-knapping or at a push, to hit other
+                            creatures.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.antler-staff">
+                        <th>
+                            Antler staff
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td colspan="2">
+                            A hooked antler of a red deer affixed to a long staff. Can be used for
+                            hooking branches, digging but also for attacking and defending.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.stone-axe">
+                        <th>
+                            Stone axe
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td colspan="2">
+                            A sharpened, flat stone mounted into a wooden haft. Can be used for
+                            attacking and defending.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.bow">
+                        <th>
+                            Bow
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            10
+                        </td>
+                        <td colspan="2">
+                            Can only be used for attacking and needs an arrow.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.sharpened-arrow">
+                        <th>
+                            Sharpened arrow
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td colspan="2">
+                            Arrow
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.flint-tipped-arrow">
+                        <th>
+                            Flint-tipped arrow
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td colspan="2">Arrow</td>
+                    </tr>
+                    <tr id="tables.item-list.stone-hand-axe">
+                        <th>
+                            Stone hand axe
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            10
+                        </td>
+                        <td colspan="2">
+                            A teardrop-shaped stone that can be held in the palm and swung. Can only
+                            be used for attacking.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.flint-adze">
+                        <th>
+                            Flint adze
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            10
+                        </td>
+                        <td colspan="2">
+                            Can be used for digging, woodworking and fighting.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.wooden-spear">
+                        <th>
+                            Wooden spear
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td colspan="2">
+                            Basically a sharpened stick which can only be used for attacking. It can
+                            also be thrown.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.stone-tipped-spear">
+                        <th>
+                            Stone-tipped spear
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr id="tables.item-list.obsidian-scraper">
+                        <th>
+                            Obsidian scraper
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            10
+                        </td>
+                        <td colspan="2">
+                            Can be used in the making of wooden or leather items.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.sling">
+                        <th>
+                            Sling
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            20
+                        </td>
+                        <td colspan="2">
+                            Can launch a suitable pebble or stone to great distances. Can only be
+                            used for attacking.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.shaped-slingstone">
+                        <th>
+                            Shaped slingstone
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td colspan="2">
+                            Although a sling will launch any stone of vaguely the right size, shaped
+                            stones can provide an advantage against their intended targets.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.hand-drum">
+                        <th>
+                            Hand drum
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td colspan="2">
+                            Can be used in conjunction with singing to improve <a
+                                href="#characters.attributes.song">Song</a>
+                            rolls.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.flint-and-firestone">
+                        <th>
+                            Flint and firestone
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            10
+                        </td>
+                        <td colspan="2">
+                            Fire lighting tools that improve rolls for <a href="#tables.song-list.song-of-fire">Song of
+                                Fire</a>
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.tinder-fungus">
+                        <th>
+                            Tinder fungus
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td colspan="2">
+                            Dried tree fungus that improves rolls for <a href="#tables.song-list.song-of-fire">Song
+                                of Fire</a>
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.net">
+                        <th>
+                            Net
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td colspan="2">
+                            Can be cast for attacking but instead of wounding, it reduces the target's
+                            <a href="#characters.attributes.hunting">Hunting</a> ability. It can be made from rope.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.woven-basket">
+                        <th>
+                            Woven basket
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            20
+                        </td>
+                        <td colspan="2">
+                            Can be used for carrying things or crab fishing.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.rope">
+                        <th>
+                            Rope
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td colspan="2">
+                            Gives bonus to checks for climbing. Can also be used to tie things together.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.bone-flute">
+                        <th>
+                            Bone flute
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            20
+                        </td>
+                        <td colspan="2">
+                            Can be used in conjunction with singing to improve <a
+                                href="#characters.attributes.song">Song</a>
+                            rolls.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.mushroom-bowl">
+                        <th>
+                            Mushroom bowl
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td colspan="2">
+                            Some mushrooms can be formed into a bowl shape and dried to create a usable vessel
+                            for liquids. Heated with hot stones it can be used to turn dried food into soup,
+                            which gives an extra die to a recovery roll.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.moss-dressing">
+                        <th>
+                            Moss dressing
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td colspan="2">
+                            A very potent wound dressing, it requires rare sphagnum moss to make. Like all wound
+                            dressings, it must be made on the spot and it will add as many dice to the recovery
+                            roll of an injured person as the item's strength.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.puffball-dressing">
+                        <th>
+                            Puffball dressing
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td colspan="2">
+                            A fairly potent wound dressing, it requires spores of the giant puffball mushroom
+                            to make. Like all wound dressings, it must be made on the spot and it will add as
+                            many dice to the recovery roll of an injured person as the item's strength.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.herbal-dressing">
+                        <th>
+                            Herbal dressing
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td colspan="2">
+                            A wound dressing, it can be made of many widely available healing herbs. Like all
+                            wound dressings, it must be made on the spot and it will add as many dice to the
+                            recovery roll of an injured person as the item's strength.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+        <section id="tables.tattoo-list">
+            <h2 style="display: none;">Tattoos</h2>
+
+            <table class="item-table">
+                <caption>
+                    Tattoos
+                </caption>
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Making difficulty
+                        </th>
+                        <th>
+                            Item strength
+                        </th>
+                        <th>
+                            Item charges
+                        </th>
+                        <th colspan="2">
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tables.tattoo-list.the-watchful-eye">
+                        <th>
+                            The Campfire
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td colspan="2">
+                            The Campfire is usually tattooed above the heart, and is visible as a bright bonfire in <a
+                                href="#world.whispering-shadows">Land of Whispering Shadows</a>,
+                            aiding the character's soul in returning to its body. It adds the strength of the tattoo to
+                            the dice roll to return.
+                        </td>
+                    </tr>
+                    <tr id="tables.tattoo-list.the-watchful-eye">
+                        <th>
+                            The Watchful Eye
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td colspan="2">
+                            An eye that can be inscribed on a number of objects. Any creature with <a
+                                href="#characters.attributes.anima">Anima</a>
+                            that enters the territory bounded by the inscribed objects triggers an alarm in the
+                            maker of this tattoo. The alarm feels like a sudden and distinct sense of unease that gets
+                            stronger the higher the intruder's <a href="#characters.attributes.anima">Anima</a>.
+                        </td>
+                    </tr>
+                    <tr id="tables.tattoo-list.the-balancing-stag">
+                        <th>
+                            The Balancing Stag
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td colspan="2">
+                            Usually inscribed on the thigh or calf, this tattoo gives the wearer a supreme sense of
+                            balance, adding dice to any rolls relating to gaining or avoiding losing balance.
+                        </td>
+                    </tr>
+                    <tr id="tables.tattoo-list.the-auroch-bull">
+                        <th>
+                            The Bull Auroch
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td colspan="2">
+                            This chest tattoo helps the wearer when they are attempting a feat of strength or endurance.
+                        </td>
+                    </tr>
+                    <tr id="tables.tattoo-list.the-crafty-crow">
+                        <th>
+                            The Crafty Crow
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td colspan="2">
+                            The wearer can activate this tattoo to add dice to their
+                            <a href="#characters.attributes.making">Making</a> or <a
+                                href="#characters.attributes.cunning">Cunning</a> roll.
+                        </td>
+                    </tr>
+                    <tr id="tables.tattoo-list.the-hand">
+                        <th>
+                            The Hand
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td colspan="2">
+                            When a group of people make this tattoo together, they will become able
+                            to locate each other by concentrating for a short time. <em>Note: this tattoo is made by
+                                spraying paint (usually ochre) from the mouth over one's own hand stretched out against
+                                a cave wall.</em>
+                        </td>
+                    </tr>
+                    <tr id="tables.tattoo-list.the-slippery-eel">
+                        <th>
+                            The Slippery Eel
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td colspan="2">
+                            This tattoo can cover an entire arm, snaking around it multiple times. The wearer can
+                            activate it to add dice to their defensive rolls in combat.
+                        </td>
+                    </tr>
+                    <tr id="tables.tattoo-list.the-lizard-tail">
+                        <th>
+                            The Lizard Tail
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td colspan="2">
+                            When activated, this tattoo instantly regenerates 2 lost
+                            <a href="#characters.attributes.life">Life</a> points.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+        <section id="tables.song-list">
+            <h2 style="display: none;">Songs</h2>
+            <table class="item-table">
+                <caption>
+                    Songs
+                </caption>
+                <thead>
+                    <tr>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Difficulty
+                        </th>
+                        <th colspan="2">
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tables.song-list.song-of-the-bat">
+                        <th>
+                            Song of the Bat
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            This song is sung in a pitch too high for human ears to hear, it allows you to
+                            &ldquo;see&rdquo; in the dark through echolocation.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-north-star">
+                        <th>
+                            Song of the North Star
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            Gives you the location of the North Star in the sky, even in broad
+                            daylight, in a cave, or under cloudy skies. <em>(Note: Due to the precession of equinoxes
+                                the North Star is actually Vega, a
+                                star far brighter than our present pole star Polaris.)</em>
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-ghost-light">
+                        <th>
+                            Song of the Ghost Light
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            Summons a small globe of light mid-air which will provide light in
+                            darkness and can scare wild animals. You can move it around at walking pace.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-fire">
+                        <th>
+                            Song of Fire
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td colspan="2">
+                            Lights a flammable object on fire. If targeted on a living creature, it causes
+                            wounding equal to the song's strength.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-air">
+                        <th>
+                            Song of Air
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td colspan="2">
+                            Allows you to breathe underwater or in other places with no breathable
+                            air. This song is a continuous murmur sung with a closed mouth and circular breathing.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-stunning">
+                        <th>
+                            Song of Stunning
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td colspan="2">
+                            Not so much a song but a sudden, ear-piercingly loud scream that stuns all creatures in
+                            front of you. It reduces their <a href="#characters.attributes.hunting">Hunting</a> ability
+                            for a few moments by as many points as the song's strength.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-wolf">
+                        <th>
+                            Song of the Wolf
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td colspan="2">
+                            This howl-like song allows you to send a simple message over a long distance. It travels
+                            even further at night, and if any wolves are hearing it, they will repeat it, allowing it to
+                            travel further yet. This song is almost indistinguishable from a wolf's howl, only people
+                            who you target will be able to decipher its meaning.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-bear">
+                        <th>
+                            Song of the Bear
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td colspan="2">
+                            Gives you the commanding (or frightening) presence of the bear. Increases your
+                            <a href="#characters.attributes.anima">Anima</a> by the spell's strength. To the untrained
+                            ear or from a distance this song sounds like the roar of an angry bear, which may prompt
+                            sensible creatures to make a hasty exit.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-waves">
+                        <th>
+                            Song of the Waves
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            Calms waters, makes it easier to sail against the wind or
+                            currents.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-healing">
+                        <th>
+                            Song of Healing
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            The target can add the strength of this soothing song to their recovery
+                            roll.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-calling">
+                        <th>
+                            Song of Calling
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td colspan="2">
+                            Tries to call a stricken being back from the brink of death. The song's
+                            strength can be added to any roll made by the target in <em>The Land of the
+                                Whispering Shadows</em>. This song has a keening, otherworldly tone, which
+                            may cause people who hear it to burst into tears.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-stone">
+                        <th>
+                            Song of the Stone
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td colspan="2">
+                            Enchants a piece of stone to be lighter, heavier, harder or softer. If
+                            used on stone tools or weapons, it increases the item's strength with the spell's
+                            strength.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-plains-wind">
+                        <th>
+                            Song of the Plains Wind
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td colspan="2">
+                            Summons the dry, hot summer winds of the Great Plain. The wind isn't strong but it is
+                            persistent and can carry with it tiny clay particles that can blind a creature.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-buzzard">
+                        <th>
+                            Song of the Buzzard
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            Evoking the plaintive, far-carrying call of the common buzzard allows the singer to see the
+                            surrounding area from a bird's eye view, seeing far and wide. <em>(Note: this song only
+                                works
+                                in daylight and outdoors, but is not blocked by clouds.)</em>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+    <section id="character-sheet" class="character-sheet">
+        <div id="sheet-first">
+            <div class="main">
+                <div>Name: </div>
+                <div>Background:</div>
+                <div>Age:</div>
+            </div>
+            <ul class="attributes">
+                <li>Hunting:</li>
+                <li>Making:</li>
+                <li>Life:</li>
+                <li>Cunning:</li>
+                <li>Song:</li>
+                <li>Anima:</li>
+            </ul>
+            <table class="songs">
+                <caption>Songs known</caption>
+                <thead>
+                    <tr>
+                        <th colspan="4">Song</th>
+                        <th>Difficulty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="description">Description:</div>
+            <div class="notes">Notes:</div>
+        </div>
+        <div id="sheet-second">
+            <table class="items">
+                <caption>Inventory</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">Name</th>
+                        <th>Str.</th>
+                        <th>Diff.</th>
+                        <th>Can make</th>
+                        <th colspan="3">Qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="items">
+                <caption>Tattoos</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">Name</th>
+                        <th>Str.</th>
+                        <th>Diff.</th>
+                        <th>Can make</th>
+                        <th colspan="3">Charges</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>☐</td>
+                        <td colspan="3">☐☐☐☐☐☐☐☐☐☐☐☐</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+
+</html>

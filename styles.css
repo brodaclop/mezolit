@@ -1,0 +1,294 @@
+@page {
+    size: 8.5in 5.5in;
+    margin: 40pt 40pt 40pt 40pt;
+}
+
+@page: right {
+    @bottom-left {
+        border-top: .25pt solid #666;
+        content: string(chaptertitle) " / " string(sectiontitle);
+        font-size: 9pt;
+        color: #333;
+    }
+
+    @bottom-right {
+        border-top: .25pt solid #666;
+        content: counter(page);
+        font-size: 9pt;
+    }
+}
+
+@page: left {
+    @bottom-right {
+        border-top: .25pt solid #666;
+        content: string(chaptertitle) " / " string(sectiontitle);
+        font-size: 9pt;
+        color: #333;
+    }
+
+    @bottom-left {
+        border-top: .25pt solid #666;
+        content: counter(page);
+        font-size: 9pt;
+    }
+}
+
+@page cover {
+    size: 8.5in 5.5in;
+    margin: 0;
+}
+
+
+
+div#frontcover {
+    page: cover;
+    width: 8.5in;
+    height: 5.5in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#frontcover .title {
+    font-size: 40pt;
+    text-transform: uppercase;
+}
+
+div#frontcover .subtitle {
+    font-size: 20pt;
+    font-variant: small-caps;
+    color: #666;
+}
+
+
+
+h1 {
+    string-set: chaptertitle content(), sectiontitle content();
+}
+
+h2 {
+    string-set: sectiontitle content();
+}
+
+section#intro {
+    string-set: chaptertitle "Mezolit", sectiontitle "Introduction";
+}
+
+body {
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    page-break-before: always;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    page-break-after: avoid;
+}
+
+tr,
+th,
+td {
+    page-break-inside: avoid;
+}
+
+
+table,
+tr,
+td,
+th,
+caption {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+caption {
+    padding-top: 2.5pt;
+    padding-bottom: 2.5pt;
+    font-weight: 700;
+    background-color: color-mix(in srgb, white 70%, darkseagreen 30%)
+}
+
+td,
+th {
+    padding: 2.5pt;
+}
+
+.item-table tbody tr td:last-of-type() {
+    vertical-align: top;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 10pt;
+}
+
+thead {
+    background-color: aliceblue;
+}
+
+a {
+    font-style: italic;
+    text-decoration: none;
+    color: #666;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+p {
+    widows: 3;
+    orphans: 3;
+}
+
+section#intro blockquote {
+    margin: 0;
+    font-style: oblique;
+}
+
+section.toc ul a::after {
+    content: leader('.') target-counter(attr(href), page);
+}
+
+section.toc>ul>li>a {
+    font-weight: 700;
+}
+
+@page char-sheet {
+    size: 8.5in 5.5in;
+    margin: 0.5in;
+
+    @bottom-left {
+        content: '';
+    }
+
+    @bottom-right {
+        content: '';
+    }
+}
+
+
+.character-sheet {
+    page: char-sheet;
+}
+
+#sheet-first {
+    page-break-before: always;
+    width: 7.5in;
+    height: 4.5in;
+    border: 3px inset #666;
+    border-radius: 10pt;
+    corner-shape: scoop;
+    padding: 10pt;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    box-sizing: border-box;
+}
+
+#sheet-first .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding-left: 5pt;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#sheet-first .attributes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding-left: 5pt;
+    padding-right: 5pt;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#sheet-first .songs {
+    margin: 0;
+    grid-row-start: 4;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#sheet-first .songs td {
+    font-size: 6pt;
+    padding: 0;
+}
+
+
+#sheet-first .description {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+#sheet-first .notes {
+    grid-row-start: 4;
+    grid-row-end: 7;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+
+ul.attributes li::after {
+    content: leader(' ') "max: ＿/☐☐☐☐☐☐☐☐☐☐";
+}
+
+#sheet-first>* {
+    border: 1px solid black;
+}
+
+#sheet-second>* {
+    border: 1px solid black;
+}
+
+#sheet-second {
+    page-break-before: always;
+    width: 7.5in;
+    height: 4.5in;
+    border: 3px inset #666;
+    border-radius: 10pt;
+    corner-shape: scoop;
+    padding: 10pt;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    box-sizing: border-box;
+}
+
+#sheet-second table.items {
+    margin: 0 !important;
+}
+
+#sheet-second td {
+    font-size: 9pt;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1pt;
+    padding-bottom: 1pt;
+    text-align: center;
+}
