@@ -156,12 +156,13 @@
                     <li><a href="#gameplay.magic">Magic</a></li>
                 </ul>
             </li>
-            <li><a href="#camp-backgronds">Camp backgrounds</a>
+            <li><a href="#camp-backgrounds">Camp backgrounds</a>
                 <ul>
                     <li><a href="#camp-backgrounds.fishing">River fishing camp</a></li>
                     <li><a href="#camp-backgrounds.hunter-gatherer">Forest hunter-gatherer camp</a></li>
                     <li><a href="#camp-backgrounds.stone-quarry">Stone quarry camp</a></li>
                     <li><a href="#camp-backgrounds.herd-follower">Herd follower camp</a></li>
+                    <li><a href="#camp-backgrounds.carr-stilt-house">Carr stilt house camp</a></li>
                 </ul>
             </li>
             <li><a href="#tables">Tables</a>
@@ -375,7 +376,7 @@
             extinction. Adventurers who travel together are often from the same camp but there's no hard rule
             about this. Beyond the basics players can choose their characters to be whoever they want to be.</p>
 
-        <p><strong>What they can do</strong> is represented by <a href="#character.attributes">Attributes</a>, of which
+        <p><strong>What they can do</strong> is represented by <a href="#characters.attributes">Attributes</a>, of which
             there are six. The starting values for them are determined at the start of the game and will change over the
             course of their adventure. They usually grow with experience and use but may go down temporarily as a result
             of wounds or other hindrances.</p>
@@ -483,7 +484,7 @@
                 their experiences.
             </p>
             <p>Finally the player needs to distribute 18 points between their character's 6 <a
-                    href="characters.attributes">Attributes</a>, with each attribute needing at least 1 and at most 5
+                    href="#characters.attributes">Attributes</a>, with each attribute needing at least 1 and at most 5
                 points. <em>(Note: attributes can of course rise beyond 5 later on, this is just a starting
                     restriction)</em>. They will then add the modifiers coming from their chosen <a
                     href="#camp-backgrounds">camp background</a> to these attributes, so in total their attributes
@@ -645,7 +646,7 @@
         </section>
         <section id="gameplay.death">
             <h2>On the brink of death</h2>
-            <p>Whenever a character's <a href="#character.attributes.life">Life</a> reaches 0, they enter the <a
+            <p>Whenever a character's <a href="#characters.attributes.life">Life</a> reaches 0, they enter the <a
                     href="#world.whispering-shadows">Land of Whispering Shadows</a>, a weird liminal world between life
                 and whatever comes after it.
             </p>
@@ -822,12 +823,12 @@
 
         </section>
     </section>
-    <section id="camp-backgronds">
+    <section id="camp-backgrounds">
         <h1>Camp backgrounds</h1>
 
         <section id="camp-backgrounds.fishing">
             <h2>River fishing camp</h2>
-            <p>These camps are probably the closest to being fully settled, staying in one place for
+            <p>These camps follow a cycle of settlement and upheaval on the steeper riverbanks, staying in one place for
                 several years, until some local resource (wood, reeds, etc.) gets close to depletion, then move to a
                 different stretch of the river.</p>
 
@@ -891,14 +892,12 @@
             <h2>Forest hunter-gatherer camp</h2>
             <p>These camps rely on the wide variety of resources offered by the deciduous forests
                 that took over mountainous and hilly regions after the withdrawal of the ice sheets. Typically they
-                spend
-                summers in forest shelters, collecting supplies for the winter, when they withdraw into caves to
-                survive the
-                snow and the cold.</p>
+                spend summers in forest shelters, collecting supplies for the winter, when they withdraw into caves to
+                survive the snow and the cold.</p>
 
             <p>They're roamers of forests, know all the plants and mushrooms that grow there
                 and excellent at finding their way. They're also opportunistic hunters of big game, which is their
-                main source of clothing material and provides huge amounts of meat that are smoked for preservation.
+                main source of clothing material and provides huge amounts of meat that is smoked for preservation.
             </p>
 
             <table>
@@ -953,10 +952,8 @@
 
             <p>These camps move around a lot throughout the year but they always return to a solid
                 source of stone for a season. Their expertise with recognising, quarrying and working different
-                types of
-                stone is unsurpassed, but it also means they're more reliant on trade with other camps for their
-                food
-                or clothing, which therefore often resembles that of the groups around them.</p>
+                types of stone is unsurpassed, but it also means they're more reliant on trade with other camps for
+                their food or clothing, which therefore often resembles that of the people living around them.</p>
 
             <table>
                 <thead>
@@ -980,7 +977,7 @@
                             <ul>
                                 <li><a href="#tables.item-list.antler-hammer">Antler hammer</a></li>
                                 <li><a href="#tables.item-list.stone-axe">Stone axe</a></li>
-                                <li><a href="#tables.item-list.stone-tipped-spear">Stone-tipped spear</a></li>
+                                <li><a href="#tables.item-list.flint-tipped-spear">Stone-tipped spear</a></li>
                                 <li><a href="#tables.item-list.obsidian-scraper">Obsidian scraper</a></li>
                                 <li><a href="#tables.item-list.sling">Sling</a></li>
                                 <li><a href="#tables.item-list.shaped-slingstone">Shaped slingstone</a></li>
@@ -1039,7 +1036,7 @@
                         <td>
                             <ul>
                                 <li><a href="#tables.item-list.bone-flute">Bone flute</a></li>
-                                <li><a href="#tables.item-list.stone-tipped-spear">Stone-tipped spear</a></li>
+                                <li><a href="#tables.item-list.flint-tipped-spear">Stone-tipped spear</a></li>
                                 <li><a href="#tables.item-list.woven-basket">Woven basket</a></li>
                                 <li><a href="#tables.item-list.tinder-fungus">Tinder fungus</a></li>
                                 <li><a href="#tables.item-list.stone-hand-axe">Stone hand axe</a></li>
@@ -1063,7 +1060,69 @@
                 </tbody>
             </table>
         </section>
+        <section id="camp-backgrounds.carr-stilt-house">
+            <h2>Carr stilt house camp</h2>
+            <p>These camps sprung up in the wooded floodplain wetlands and oxbow lakes of big rivers. A landscape
+                dominated by alder and ash providing shade for a boggy, semi-submerged ground teeming with ferns,
+                reeds and waterfowl, it's a rich source of food and building material.</p>
 
+            <p>Stilt house people are the only truly sedentary folk in <strong>Mezolit</strong> as most of their lives
+                are spent close to the circular communal stilt houses framed with alderwood, with mud walls.</p>
+
+            <p>As food is difficult to preserve in this environment, their diet is highly seasonal: eggs in spring,
+                waterfowl and other small game in summer and autumn, and fish in the winter. Their well-insulated houses
+                are key to winter survival, as is the peat they use for heating.</p>
+
+            <p>Their clothes consist of artfully stitched together pelts of small mammals (usually otters), decorated
+                with feathers and supplemented with textiles woven from reed fiber, which is also the source material
+                for their ropes, which are said to be the best around.</p>
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attributes</th>
+                        <th>Items</th>
+                        <th>Songs</th>
+                        <th>Tattoos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><a href="#characters.attributes.hunting">Hunting</a>: +1</li>
+                                <li><a href="#characters.attributes.song">Song</a>: +2</li>
+                                <li><a href="#characters.attributes.anima">Anima</a>: +1</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.item-list.moss-dressing">Moss dressing</a></li>
+                                <li><a href="#tables.item-list.bow">Bow</a></li>
+                                <li><a href="#tables.item-list.woven-basket">Woven basket</a></li>
+                                <li><a href="#tables.item-list.reed-arrow">Reed arrow</a></li>
+                                <li><a href="#tables.item-list.rope">Rope</a></li>
+                                <li><a href="#tables.item-list.hand-drum">Hand drum</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.song-list.song-of-the-ghost-light">Song of the Ghost Light</a></li>
+                                <li><a href="#tables.song-list.song-of-air">Song of Air</a></li>
+                                <li><a href="#tables.song-list.song-of-bonding">Song of Bonding</a></li>
+                                <li><a href="#tables.song-list.song-of-the-snake">Song of the Snake</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="#tables.tattoo-list.the-gentle-moss">The Gentle Moss</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
     <section id="tables">
         <h1>Tables</h1>
@@ -1094,25 +1153,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th id="tables.item-list.leather-tent">
-                            Leather tent
-                        </th>
-                        <td>
-                            Hard(3)
-                        </td>
-                        <td>
-                            -
-                        </td>
-                        <td>
-                            -
-                        </td>
-                        <td colspan="2">
-                            Wooden poles and leather flaps that can be quickly assembled into a tent by a group of 2-3
-                            people. The tent provides shelter from the elements for 4-6 people, making it easier to
-                            recover from wounds, make and repair items in bad weather.
-                        </td>
-                    </tr>
                     <tr>
                         <th id="tables.item-list.antler-hammer">
                             Antler hammer
@@ -1149,12 +1189,12 @@
                             hooking branches, digging but also for attacking and defending.
                         </td>
                     </tr>
-                    <tr id="tables.item-list.stone-axe">
+                    <tr id="tables.item-list.flint-tipped-arrow">
                         <th>
-                            Stone axe
+                            Arrow, flint-tipped
                         </th>
                         <td>
-                            Medium(2)
+                            Hard(3)
                         </td>
                         <td>
                             2
@@ -1163,8 +1203,62 @@
                             5
                         </td>
                         <td colspan="2">
-                            A sharpened, flat stone mounted into a wooden haft. Can be used for
-                            attacking and defending.
+                            A complex arrow with a wooden shaft and a sharp flint tip, affixed using tar and
+                            sinew. <em>(Note: Arrows are made in bunches of 5)</em>
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.reed-arrow">
+                        <th>
+                            Arrow, reed
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td colspan="2">
+                            A light hunting arrow for small game. <em>(Note: Arrows are made in bunches of 5)</em>
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.wooden-arrow">
+                        <th>
+                            Arrow, wooden
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td colspan="2">
+                            An arrow made of a single piece of wood, with a sharpened tip. <em>(Note: Arrows are made in
+                                bunches of 5)</em>
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.bone-flute">
+                        <th>
+                            Bone flute
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            20
+                        </td>
+                        <td colspan="2">
+                            Can be used in conjunction with singing to improve <a
+                                href="#characters.attributes.song">Song</a>
+                            rolls.
                         </td>
                     </tr>
                     <tr id="tables.item-list.bow">
@@ -1184,26 +1278,9 @@
                             Can only be used for attacking and needs an arrow.
                         </td>
                     </tr>
-                    <tr id="tables.item-list.sharpened-arrow">
+                    <tr id="tables.item-list.herbal-dressing">
                         <th>
-                            Sharpened arrow
-                        </th>
-                        <td>
-                            Easy(1)
-                        </td>
-                        <td>
-                            0
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td colspan="2">
-                            Arrow
-                        </td>
-                    </tr>
-                    <tr id="tables.item-list.flint-tipped-arrow">
-                        <th>
-                            Flint-tipped arrow
+                            Dressing, herbal
                         </th>
                         <td>
                             Medium(2)
@@ -1214,24 +1291,48 @@
                         <td>
                             1
                         </td>
-                        <td colspan="2">Arrow</td>
+                        <td colspan="2">
+                            A wound dressing, it can be made of many widely available healing herbs. Like all
+                            wound dressings, it must be made on the spot and it will add as many dice to the
+                            recovery roll of an injured person as the item's strength.
+                        </td>
                     </tr>
-                    <tr id="tables.item-list.stone-hand-axe">
+                    <tr id="tables.item-list.moss-dressing">
                         <th>
-                            Stone hand axe
+                            Dressing, moss
                         </th>
                         <td>
-                            Easy(1)
+                            Medium(2)
+                        </td>
+                        <td>
+                            3
                         </td>
                         <td>
                             1
                         </td>
+                        <td colspan="2">
+                            A very potent wound dressing, it requires rare sphagnum moss to make. Like all wound
+                            dressings, it must be made on the spot and it will add as many dice to the recovery
+                            roll of an injured person as the item's strength.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.puffball-dressing">
+                        <th>
+                            Dressing, puffball
+                        </th>
                         <td>
-                            10
+                            Medium(2)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            1
                         </td>
                         <td colspan="2">
-                            A teardrop-shaped stone that can be held in the palm and swung. Can only
-                            be used for attacking.
+                            A fairly potent wound dressing, it requires spores of the giant puffball mushroom
+                            to make. Like all wound dressings, it must be made on the spot and it will add as
+                            many dice to the recovery roll of an injured person as the item's strength.
                         </td>
                     </tr>
                     <tr id="tables.item-list.flint-adze">
@@ -1251,38 +1352,98 @@
                             Can be used for digging, woodworking and fighting.
                         </td>
                     </tr>
-                    <tr id="tables.item-list.wooden-spear">
+                    <tr id="tables.item-list.flint-and-firestone">
                         <th>
-                            Wooden spear
+                            Flint and firestone
                         </th>
                         <td>
                             Easy(1)
                         </td>
                         <td>
+                            1
+                        </td>
+                        <td>
+                            10
+                        </td>
+                        <td colspan="2">
+                            Fire lighting tools that improve rolls for <a href="#tables.song-list.song-of-fire">Song of
+                                Fire</a>
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.hand-drum">
+                        <th>
+                            Hand drum
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
                             2
                         </td>
                         <td>
-                            4
+                            5
                         </td>
                         <td colspan="2">
-                            Basically a sharpened stick which can only be used for attacking. It can
-                            also be thrown.
+                            Can be used in conjunction with singing to improve <a
+                                href="#characters.attributes.song">Song</a>
+                            rolls.
                         </td>
                     </tr>
-                    <tr id="tables.item-list.stone-tipped-spear">
+                    <tr>
+                        <th id="tables.item-list.leather-tent">
+                            Leather tent
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td colspan="2">
+                            Wooden poles and leather flaps that can be quickly assembled into a tent by a group of 2-3
+                            people. The tent provides shelter from the elements for 4-6 people, making it easier to
+                            recover from wounds, make and repair items in bad weather.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.mushroom-bowl">
                         <th>
-                            Stone-tipped spear
+                            Mushroom bowl
                         </th>
                         <td>
                             Medium(2)
                         </td>
                         <td>
-                            3
+                            1
                         </td>
                         <td>
-                            2
+                            5
                         </td>
-                        <td colspan="2">&nbsp;</td>
+                        <td colspan="2">
+                            Some mushrooms can be formed into a bowl shape and dried to create a usable vessel
+                            for liquids. Heated with hot stones it can be used to turn dried food into soup,
+                            which gives an extra die to a recovery roll.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.net">
+                        <th>
+                            Net
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td colspan="2">
+                            Can be cast for attacking but instead of wounding, it reduces the target's
+                            <a href="#characters.attributes.hunting">Hunting</a> ability. It can be made from rope.
+                        </td>
                     </tr>
                     <tr id="tables.item-list.obsidian-scraper">
                         <th>
@@ -1299,6 +1460,23 @@
                         </td>
                         <td colspan="2">
                             Can be used in the making of wooden or leather items.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.rope">
+                        <th>
+                            Rope
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td colspan="2">
+                            Gives bonus to checks for climbing. Can also be used to tie things together.
                         </td>
                     </tr>
                     <tr id="tables.item-list.sling">
@@ -1321,7 +1499,7 @@
                     </tr>
                     <tr id="tables.item-list.shaped-slingstone">
                         <th>
-                            Shaped slingstone
+                            Slingstone, shaped
                         </th>
                         <td>
                             Medium(2)
@@ -1337,12 +1515,45 @@
                             stones can provide an advantage against their intended targets.
                         </td>
                     </tr>
-                    <tr id="tables.item-list.hand-drum">
+                    <tr id="tables.item-list.flint-tipped-spear">
                         <th>
-                            Hand drum
+                            Spear, flint-tipped
                         </th>
                         <td>
-                            Hard(3)
+                            Medium(2)
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr id="tables.item-list.wooden-spear">
+                        <th>
+                            Spear, wooden
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td colspan="2">
+                            Basically a sharpened stick which can only be used for attacking. It can
+                            also be thrown.
+                        </td>
+                    </tr>
+                    <tr id="tables.item-list.stone-axe">
+                        <th>
+                            Stone axe
+                        </th>
+                        <td>
+                            Medium(2)
                         </td>
                         <td>
                             2
@@ -1351,14 +1562,13 @@
                             5
                         </td>
                         <td colspan="2">
-                            Can be used in conjunction with singing to improve <a
-                                href="#characters.attributes.song">Song</a>
-                            rolls.
+                            A sharpened, flat stone mounted into a wooden haft. Can be used for
+                            attacking and defending.
                         </td>
                     </tr>
-                    <tr id="tables.item-list.flint-and-firestone">
+                    <tr id="tables.item-list.stone-hand-axe">
                         <th>
-                            Flint and firestone
+                            Stone hand axe
                         </th>
                         <td>
                             Easy(1)
@@ -1370,8 +1580,8 @@
                             10
                         </td>
                         <td colspan="2">
-                            Fire lighting tools that improve rolls for <a href="#tables.song-list.song-of-fire">Song of
-                                Fire</a>
+                            A teardrop-shaped stone that can be held in the palm and swung. Can only
+                            be used for attacking.
                         </td>
                     </tr>
                     <tr id="tables.item-list.tinder-fungus">
@@ -1392,24 +1602,6 @@
                                 of Fire</a>
                         </td>
                     </tr>
-                    <tr id="tables.item-list.net">
-                        <th>
-                            Net
-                        </th>
-                        <td>
-                            Easy(1)
-                        </td>
-                        <td>
-                            0
-                        </td>
-                        <td>
-                            3
-                        </td>
-                        <td colspan="2">
-                            Can be cast for attacking but instead of wounding, it reduces the target's
-                            <a href="#characters.attributes.hunting">Hunting</a> ability. It can be made from rope.
-                        </td>
-                    </tr>
                     <tr id="tables.item-list.woven-basket">
                         <th>
                             Woven basket
@@ -1425,118 +1617,6 @@
                         </td>
                         <td colspan="2">
                             Can be used for carrying things or crab fishing.
-                        </td>
-                    </tr>
-                    <tr id="tables.item-list.rope">
-                        <th>
-                            Rope
-                        </th>
-                        <td>
-                            Medium(2)
-                        </td>
-                        <td>
-                            2
-                        </td>
-                        <td>
-                            5
-                        </td>
-                        <td colspan="2">
-                            Gives bonus to checks for climbing. Can also be used to tie things together.
-                        </td>
-                    </tr>
-                    <tr id="tables.item-list.bone-flute">
-                        <th>
-                            Bone flute
-                        </th>
-                        <td>
-                            Hard(3)
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            20
-                        </td>
-                        <td colspan="2">
-                            Can be used in conjunction with singing to improve <a
-                                href="#characters.attributes.song">Song</a>
-                            rolls.
-                        </td>
-                    </tr>
-                    <tr id="tables.item-list.mushroom-bowl">
-                        <th>
-                            Mushroom bowl
-                        </th>
-                        <td>
-                            Medium(2)
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            5
-                        </td>
-                        <td colspan="2">
-                            Some mushrooms can be formed into a bowl shape and dried to create a usable vessel
-                            for liquids. Heated with hot stones it can be used to turn dried food into soup,
-                            which gives an extra die to a recovery roll.
-                        </td>
-                    </tr>
-                    <tr id="tables.item-list.moss-dressing">
-                        <th>
-                            Moss dressing
-                        </th>
-                        <td>
-                            Medium(2)
-                        </td>
-                        <td>
-                            3
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td colspan="2">
-                            A very potent wound dressing, it requires rare sphagnum moss to make. Like all wound
-                            dressings, it must be made on the spot and it will add as many dice to the recovery
-                            roll of an injured person as the item's strength.
-                        </td>
-                    </tr>
-                    <tr id="tables.item-list.puffball-dressing">
-                        <th>
-                            Puffball dressing
-                        </th>
-                        <td>
-                            Medium(2)
-                        </td>
-                        <td>
-                            2
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td colspan="2">
-                            A fairly potent wound dressing, it requires spores of the giant puffball mushroom
-                            to make. Like all wound dressings, it must be made on the spot and it will add as
-                            many dice to the recovery roll of an injured person as the item's strength.
-                        </td>
-                    </tr>
-                    <tr id="tables.item-list.herbal-dressing">
-                        <th>
-                            Herbal dressing
-                        </th>
-                        <td>
-                            Medium(2)
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td colspan="2">
-                            A wound dressing, it can be made of many widely available healing herbs. Like all
-                            wound dressings, it must be made on the spot and it will add as many dice to the
-                            recovery roll of an injured person as the item's strength.
                         </td>
                     </tr>
                 </tbody>
@@ -1570,6 +1650,41 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr id="tables.tattoo-list.the-balancing-stag">
+                        <th>
+                            The Balancing Stag
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td colspan="2">
+                            Usually inscribed on the thigh or calf, this tattoo gives the wearer a supreme sense of
+                            balance, adding dice to any rolls relating to gaining or avoiding losing balance.
+                        </td>
+                    </tr>
+                    <tr id="tables.tattoo-list.the-bull-auroch">
+                        <th>
+                            The Bull Auroch
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td colspan="2">
+                            This chest tattoo helps the wearer when they are attempting a feat of strength or endurance.
+                        </td>
+                    </tr>
                     <tr id="tables.tattoo-list.the-watchful-eye">
                         <th>
                             The Campfire
@@ -1590,62 +1705,6 @@
                             the dice roll to return.
                         </td>
                     </tr>
-                    <tr id="tables.tattoo-list.the-watchful-eye">
-                        <th>
-                            The Watchful Eye
-                        </th>
-                        <td>
-                            Medium(2)
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            -
-                        </td>
-                        <td colspan="2">
-                            An eye that can be inscribed on a number of objects. Any creature with <a
-                                href="#characters.attributes.anima">Anima</a>
-                            that enters the territory bounded by the inscribed objects triggers an alarm in the
-                            maker of this tattoo. The alarm feels like a sudden and distinct sense of unease that gets
-                            stronger the higher the intruder's <a href="#characters.attributes.anima">Anima</a>.
-                        </td>
-                    </tr>
-                    <tr id="tables.tattoo-list.the-balancing-stag">
-                        <th>
-                            The Balancing Stag
-                        </th>
-                        <td>
-                            Hard(3)
-                        </td>
-                        <td>
-                            2
-                        </td>
-                        <td>
-                            3
-                        </td>
-                        <td colspan="2">
-                            Usually inscribed on the thigh or calf, this tattoo gives the wearer a supreme sense of
-                            balance, adding dice to any rolls relating to gaining or avoiding losing balance.
-                        </td>
-                    </tr>
-                    <tr id="tables.tattoo-list.the-auroch-bull">
-                        <th>
-                            The Bull Auroch
-                        </th>
-                        <td>
-                            Medium(2)
-                        </td>
-                        <td>
-                            3
-                        </td>
-                        <td>
-                            3
-                        </td>
-                        <td colspan="2">
-                            This chest tattoo helps the wearer when they are attempting a feat of strength or endurance.
-                        </td>
-                    </tr>
                     <tr id="tables.tattoo-list.the-crafty-crow">
                         <th>
                             The Crafty Crow
@@ -1663,6 +1722,27 @@
                             The wearer can activate this tattoo to add dice to their
                             <a href="#characters.attributes.making">Making</a> or <a
                                 href="#characters.attributes.cunning">Cunning</a> roll.
+                        </td>
+                    </tr>
+                    <tr id="tables.tattoo-list.the-gentle-moss">
+                        <th>
+                            The Gentle Moss
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td colspan="2">
+                            This greenish tattoo resembles moss covering the skin. When activated, it grows to cover the
+                            entire body, providing an extra die to <a href="#characters.attributes.cunning">Cunning</a>
+                            rolls to hide or <a href="#characters.attributes.life">Life</a> rolls to resist <a
+                                href="#gameplay.combat.wounding">wounding</a>. It can do each of these once per
+                            activation.
                         </td>
                     </tr>
                     <tr id="tables.tattoo-list.the-hand">
@@ -1685,6 +1765,24 @@
                                 a cave wall.</em>
                         </td>
                     </tr>
+                    <tr id="tables.tattoo-list.the-lizard-tail">
+                        <th>
+                            The Lizard Tail
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td colspan="2">
+                            When activated, this tattoo instantly regenerates 2 lost
+                            <a href="#characters.attributes.life">Life</a> points.
+                        </td>
+                    </tr>
                     <tr id="tables.tattoo-list.the-slippery-eel">
                         <th>
                             The Slippery Eel
@@ -1703,22 +1801,25 @@
                             activate it to add dice to their defensive rolls in combat.
                         </td>
                     </tr>
-                    <tr id="tables.tattoo-list.the-lizard-tail">
+                    <tr id="tables.tattoo-list.the-watchful-eye">
                         <th>
-                            The Lizard Tail
+                            The Watchful Eye
                         </th>
                         <td>
-                            Hard(3)
-                        </td>
-                        <td>
-                            2
+                            Medium(2)
                         </td>
                         <td>
                             1
                         </td>
+                        <td>
+                            -
+                        </td>
                         <td colspan="2">
-                            When activated, this tattoo instantly regenerates 2 lost
-                            <a href="#characters.attributes.life">Life</a> points.
+                            An eye that can be inscribed on a number of objects. Any creature with <a
+                                href="#characters.attributes.anima">Anima</a>
+                            that enters the territory bounded by the inscribed objects triggers an alarm in the
+                            maker of this tattoo. The alarm feels like a sudden and distinct sense of unease that gets
+                            stronger the higher the intruder's <a href="#characters.attributes.anima">Anima</a>.
                         </td>
                     </tr>
                 </tbody>
@@ -1745,56 +1846,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr id="tables.song-list.song-of-the-bat">
-                        <th>
-                            Song of the Bat
-                        </th>
-                        <td>
-                            Easy(1)
-                        </td>
-                        <td colspan="2">
-                            This song is sung in a pitch too high for human ears to hear, it allows you to
-                            &ldquo;see&rdquo; in the dark through echolocation.
-                        </td>
-                    </tr>
-                    <tr id="tables.song-list.song-of-the-north-star">
-                        <th>
-                            Song of the North Star
-                        </th>
-                        <td>
-                            Easy(1)
-                        </td>
-                        <td colspan="2">
-                            Gives you the location of the North Star in the sky, even in broad
-                            daylight, in a cave, or under cloudy skies. <em>(Note: Due to the precession of equinoxes
-                                the North Star is actually Vega, a
-                                star far brighter than our present pole star Polaris.)</em>
-                        </td>
-                    </tr>
-                    <tr id="tables.song-list.song-of-the-ghost-light">
-                        <th>
-                            Song of the Ghost Light
-                        </th>
-                        <td>
-                            Easy(1)
-                        </td>
-                        <td colspan="2">
-                            Summons a small globe of light mid-air which will provide light in
-                            darkness and can scare wild animals. You can move it around at walking pace.
-                        </td>
-                    </tr>
-                    <tr id="tables.song-list.song-of-fire">
-                        <th>
-                            Song of Fire
-                        </th>
-                        <td>
-                            Medium(2)
-                        </td>
-                        <td colspan="2">
-                            Lights a flammable object on fire. If targeted on a living creature, it causes
-                            wounding equal to the song's strength.
-                        </td>
-                    </tr>
                     <tr id="tables.song-list.song-of-air">
                         <th>
                             Song of Air
@@ -1807,69 +1858,19 @@
                             air. This song is a continuous murmur sung with a closed mouth and circular breathing.
                         </td>
                     </tr>
-                    <tr id="tables.song-list.song-of-stunning">
+                    <tr id="tables.song-list.song-of-bonding">
                         <th>
-                            Song of Stunning
-                        </th>
-                        <td>
-                            Hard(3)
-                        </td>
-                        <td colspan="2">
-                            Not so much a song but a sudden, ear-piercingly loud scream that stuns all creatures in
-                            front of you. It reduces their <a href="#characters.attributes.hunting">Hunting</a> ability
-                            for a few moments by as many points as the song's strength.
-                        </td>
-                    </tr>
-                    <tr id="tables.song-list.song-of-the-wolf">
-                        <th>
-                            Song of the Wolf
-                        </th>
-                        <td>
-                            Medium(2)
-                        </td>
-                        <td colspan="2">
-                            This howl-like song allows you to send a simple message over a long distance. It travels
-                            even further at night, and if any wolves are hearing it, they will repeat it, allowing it to
-                            travel further yet. This song is almost indistinguishable from a wolf's howl, only people
-                            who you target will be able to decipher its meaning.
-                        </td>
-                    </tr>
-                    <tr id="tables.song-list.song-of-the-bear">
-                        <th>
-                            Song of the Bear
-                        </th>
-                        <td>
-                            Hard(3)
-                        </td>
-                        <td colspan="2">
-                            Gives you the commanding (or frightening) presence of the bear. Increases your
-                            <a href="#characters.attributes.anima">Anima</a> by the spell's strength. To the untrained
-                            ear or from a distance this song sounds like the roar of an angry bear, which may prompt
-                            sensible creatures to make a hasty exit.
-                        </td>
-                    </tr>
-                    <tr id="tables.song-list.song-of-the-waves">
-                        <th>
-                            Song of the Waves
+                            Song of Bonding
                         </th>
                         <td>
                             Easy(1)
                         </td>
                         <td colspan="2">
-                            Calms waters, makes it easier to sail against the wind or
-                            currents.
-                        </td>
-                    </tr>
-                    <tr id="tables.song-list.song-of-healing">
-                        <th>
-                            Song of Healing
-                        </th>
-                        <td>
-                            Easy(1)
-                        </td>
-                        <td colspan="2">
-                            The target can add the strength of this soothing song to their recovery
-                            roll.
+                            When two objects are pressed together, this song will create a bond between them. The
+                            strength of the bond depends on how well the objects fit each other: two parts of a broken
+                            stick or a torn rope are fused together perfectly, while a stone affixed to the end of the
+                            stick by this song alone will come off fairly easily. It does however add dice to any <a
+                                href="#characters.attributes.making">Making</a> roll involving joining objects together.
                         </td>
                     </tr>
                     <tr id="tables.song-list.song-of-calling">
@@ -1886,29 +1887,67 @@
                             may cause people who hear it to burst into tears.
                         </td>
                     </tr>
-                    <tr id="tables.song-list.song-of-the-stone">
+                    <tr id="tables.song-list.song-of-fire">
                         <th>
-                            Song of the Stone
-                        </th>
-                        <td>
-                            Hard(3)
-                        </td>
-                        <td colspan="2">
-                            Enchants a piece of stone to be lighter, heavier, harder or softer. If
-                            used on stone tools or weapons, it increases the item's strength with the spell's
-                            strength.
-                        </td>
-                    </tr>
-                    <tr id="tables.song-list.song-of-the-plains-wind">
-                        <th>
-                            Song of the Plains Wind
+                            Song of Fire
                         </th>
                         <td>
                             Medium(2)
                         </td>
                         <td colspan="2">
-                            Summons the dry, hot summer winds of the Great Plain. The wind isn't strong but it is
-                            persistent and can carry with it tiny clay particles that can blind a creature.
+                            Lights a flammable object on fire. If targeted on a living creature, it causes
+                            wounding equal to the song's strength.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-healing">
+                        <th>
+                            Song of Healing
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            The target can add the strength of this soothing song to their recovery
+                            roll.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-stunning">
+                        <th>
+                            Song of Stunning
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td colspan="2">
+                            Not so much a song but a sudden, ear-piercingly loud scream that stuns all creatures in
+                            front of you. It reduces their <a href="#characters.attributes.hunting">Hunting</a> ability
+                            for a few moments by as many points as the song's strength.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-bat">
+                        <th>
+                            Song of the Bat
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            This song is sung in a pitch too high for human ears to hear, it allows you to
+                            &ldquo;see&rdquo; in the dark through echolocation.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-bear">
+                        <th>
+                            Song of the Bear
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td colspan="2">
+                            Gives you the commanding (or frightening) presence of the bear. Increases your
+                            <a href="#characters.attributes.anima">Anima</a> by the spell's strength. To the untrained
+                            ear or from a distance this song sounds like the roar of an angry bear, which may prompt
+                            sensible creatures to make a hasty exit.
                         </td>
                     </tr>
                     <tr id="tables.song-list.song-of-the-buzzard">
@@ -1923,6 +1962,97 @@
                             surrounding area from a bird's eye view, seeing far and wide. <em>(Note: this song only
                                 works
                                 in daylight and outdoors, but is not blocked by clouds.)</em>
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-ghost-light">
+                        <th>
+                            Song of the Ghost Light
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            Summons a small globe of light mid-air which will provide light in
+                            darkness and can scare wild animals. You can move it around at walking pace.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-north-star">
+                        <th>
+                            Song of the North Star
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            Gives you the location of the North Star in the sky, even in broad
+                            daylight, in a cave, or under cloudy skies. <em>(Note: Due to the precession of equinoxes
+                                the North Star is actually Vega, a
+                                star far brighter than our present pole star Polaris.)</em>
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-plains-wind">
+                        <th>
+                            Song of the Plains Wind
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td colspan="2">
+                            Summons the dry, hot summer winds of the Great Plain. The wind isn't strong but it is
+                            persistent and can carry with it tiny clay particles that can blind a creature.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-snake">
+                        <th>
+                            Song of the Snake
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td colspan="2">
+                            Enchants a rope to move, tangle and untangle at will. It can be used to topple a creature,
+                            or bound one of their limbs if they fail a <a
+                                href="#characters.attributes.cunning">Cunning</a> roll against the spell's strength.
+                            Alternatively it can be used to calm down a snake and make it ignore you.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-stone">
+                        <th>
+                            Song of the Stone
+                        </th>
+                        <td>
+                            Hard(3)
+                        </td>
+                        <td colspan="2">
+                            Enchants a piece of stone to be lighter, heavier, harder or softer. If
+                            used on stone tools or weapons, it increases the item's strength with the spell's
+                            strength.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-waves">
+                        <th>
+                            Song of the Waves
+                        </th>
+                        <td>
+                            Easy(1)
+                        </td>
+                        <td colspan="2">
+                            Calms waters, makes it easier to sail against the wind or
+                            currents.
+                        </td>
+                    </tr>
+                    <tr id="tables.song-list.song-of-the-wolf">
+                        <th>
+                            Song of the Wolf
+                        </th>
+                        <td>
+                            Medium(2)
+                        </td>
+                        <td colspan="2">
+                            This howl-like song allows you to send a simple message over a long distance. It travels
+                            even further at night, and if any wolves are hearing it, they will repeat it, allowing it to
+                            travel further yet. This song is almost indistinguishable from a wolf's howl, only people
+                            who you target will be able to decipher its meaning.
                         </td>
                     </tr>
                 </tbody>
@@ -1999,7 +2129,7 @@
                         <th>Str.</th>
                         <th>Diff.</th>
                         <th>Can make</th>
-                        <th colspan="3">Qty</th>
+                        <th colspan="3">Charges</th>
                     </tr>
                 </thead>
                 <tbody>
